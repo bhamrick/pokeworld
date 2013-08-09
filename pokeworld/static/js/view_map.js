@@ -134,7 +134,7 @@ function init() {
 
     handle_hash();
     window.onhashchange = handle_hash;
-    $("#map_img").click(map_click_handler);
+    $("#map_img").dblclick(map_click_handler);
 }
 
 $(document).ready(init);
