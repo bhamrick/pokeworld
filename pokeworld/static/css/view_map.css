@@ -55,6 +55,9 @@
     z-index: 2;
     background: none;
 }
+.warp {
+    z-index: 2;
+}
 #minimap {
     border:1px solid white;
     z-index: 3;

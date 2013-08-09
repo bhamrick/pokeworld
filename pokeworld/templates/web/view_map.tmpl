@@ -2,10 +2,15 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/static/css/view_map.css">
-{% if use_minimap %}
 <script src="/static/js/jquery.js"></script>
-<script src="/static/js/view_map.js"></script>
+<script type="text/javascript">
+{% if use_minimap %}
+use_minimap = true;
+{% else %}
+use_minimap = false;
 {% endif %}
+</script>
+<script src="/static/js/view_map.js"></script>
 </head>
 <body>
 <div id="map_img" style="background:url({{ map_img }}); width:{{ map_px_w }}px; height:{{ map_px_h }}px; position:relative;">
@@ -15,6 +20,9 @@
 {{ o.description }}
 </div>
 </div>
+{% endfor %}
+{% for w in warps %}
+<a href="/{{ game }}/{{ w.to_map }}#{{ w.to_x }},{{ w.to_y }}" class="warp" style="display: block; position:absolute; left:{{ w.px_x }}px; top:{{ w.px_y }}px; width:16px; height:16px;"></a>
 {% endfor %}
 <div class="highlight"></div>
 </div>

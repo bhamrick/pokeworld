@@ -118,19 +118,21 @@ function map_click_handler(e) {
 }
 
 function init() {
-    update_minimap();
-    $(document).scroll(update_minimap);
-    $(window).resize(update_minimap);
-    $("#minimap").click(minimap_click_handler);
-    dragging = false;
-    $(document).mousedown(function(e) {
-        dragging = true;
-        e.originalEvent.preventDefault();
-    });
-    $(document).mouseup(function() {
+    if (use_minimap) {
+        update_minimap();
+        $(document).scroll(update_minimap);
+        $(window).resize(update_minimap);
+        $("#minimap").click(minimap_click_handler);
         dragging = false;
-    });
-    $(document).mousemove(minimap_drag_handler);
+        $(document).mousedown(function(e) {
+            dragging = true;
+            e.originalEvent.preventDefault();
+        });
+        $(document).mouseup(function() {
+            dragging = false;
+        });
+        $(document).mousemove(minimap_drag_handler);
+    }
 
     handle_hash();
     window.onhashchange = handle_hash;
