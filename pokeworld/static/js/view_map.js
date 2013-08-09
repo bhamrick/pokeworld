@@ -135,8 +135,12 @@ function handle_hash() {
 
 function map_click_handler(e) {
     var map_coords = $("#map_img").offset();
-    var x = Math.floor((e.pageX - map_coords.left) / 16);
-    var y = Math.floor((e.pageY - map_coords.top) / 16);
+    var map_w = $("#map_img").width();
+    var map_h = $("#map_img").height();
+    var border_width_w = ($("#map_img").outerWidth() - map_w) / 2;
+    var border_width_h = ($("#map_img").outerHeight() - map_h) / 2;
+    var x = Math.floor((e.pageX - map_coords.left - border_width_w) / 16);
+    var y = Math.floor((e.pageY - map_coords.top - border_width_h) / 16);
     highlight_tile(x, y);
     window.location.hash = x + "," + y;
 }
