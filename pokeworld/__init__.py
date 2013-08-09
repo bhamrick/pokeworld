@@ -7,6 +7,5 @@ def main(global_config, **settings):
     """
     config = Configurator(settings=settings)
     config.include(routes)
-    print config
     return config.make_wsgi_app()
 
