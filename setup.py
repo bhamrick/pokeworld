@@ -16,9 +16,9 @@ requires = [
     'waitress',
     ]
 
-setup(name='pokeworld',
+setup(name='APPNAME',
       version='0.0',
-      description='pokeworld',
+      description='APPNAME',
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -33,13 +33,13 @@ setup(name='pokeworld',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      test_suite='pokeworld',
+      test_suite='APPNAME',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = pokeworld:main
+      main = APPNAME:main
       [console_scripts]
-      initialize_pokeworld_db = pokeworld.scripts.initializedb:main
+      initialize_APPNAME_db = APPNAME.scripts.initializedb:main
       """,
       )
 
