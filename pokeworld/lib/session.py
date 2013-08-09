@@ -8,8 +8,6 @@ env = jinja2.Environment(loader=jinja2.FileSystemLoader('pokeworld/templates'))
 def web(template=None, content_type='text/html', *args, **kwargs):
     """
     Decorator for web routes
-
-    TODO - permissions
     """
     def decorator(f):
         def wrapper(request):
@@ -29,8 +27,6 @@ def ajax(*args, **kwargs):
     Decorator for ajax routes
 
     Returns a response with a JSON version of the return value of f
-
-    TODO - permissions
     """
     def decorator(f):
         def wrapper(request):

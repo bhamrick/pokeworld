@@ -1,0 +1,1 @@
+{"map_img": "/static/images/map121.png", "map_px_w": 800, "map_px_h": 128, "objects": [{"px_y": 32, "px_x": 192, "description": "NUGGET", "px_w": 16, "px_h": 16}, {"px_y": 80, "px_x": 32, "description": "", "px_w": 16, "px_h": 16}, {"px_y": 80, "px_x": 336, "description": "ELIXER", "px_w": 16, "px_h": 16}, {"px_y": 32, "px_x": 752, "description": "", "px_w": 16, "px_h": 16}]}
