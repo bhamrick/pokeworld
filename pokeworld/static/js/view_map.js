@@ -102,11 +102,13 @@ function scroll_to_highlight() {
 }
 
 function handle_hash() {
-    var coords = window.location.hash.slice(1).split(",",2);
-    var x = parseInt(coords[0]);
-    var y = parseInt(coords[1]);
-    highlight_tile(x, y);
-    scroll_to_highlight();
+    var coords = window.location.hash.slice(1).split(",");
+    if (coords.length == 2) {
+        var x = parseInt(coords[0]);
+        var y = parseInt(coords[1]);
+        highlight_tile(x, y);
+        scroll_to_highlight();
+    }
 }
 
 function map_click_handler(e) {
