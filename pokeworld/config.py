@@ -6,8 +6,5 @@ def routes(config):
     config.add_route('root', '')
     config.add_view(WebView.home, route_name='root')
 
-    config.add_route('home', '/home')
-    config.add_view(WebView.home, route_name='home')
-
-    config.add_route('ajax_test', '/ajax_test')
-    config.add_view(WebView.ajax_test, route_name='ajax_test')
+    config.add_route('view_map', '/{game}/{mapid}')
+    config.add_view(WebView.view_map, route_name='view_map')
