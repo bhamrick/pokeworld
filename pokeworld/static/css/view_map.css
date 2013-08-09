@@ -43,3 +43,10 @@
 .object:hover .popup {
     display: block;
 }
+#minimap {
+    border:1px solid white;
+}
+#minimap #selector {
+    border:1px solid white;
+    background:none;
+}

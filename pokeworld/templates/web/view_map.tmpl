@@ -2,6 +2,10 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/static/css/view_map.css">
+{% if use_minimap %}
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/minimap.js"></script>
+{% endif %}
 </head>
 <body>
 <div id="map_img" style="background:url({{ map_img }}); width:{{ map_px_w }}px; height:{{ map_px_h }}px; position:relative;">
@@ -13,5 +17,11 @@
 </div>
 {% endfor %}
 </div>
+{% if use_minimap %}
+<div id="minimap" style="background:url({{ minimap_img }}); width:200px; height:200px; position:fixed; bottom:10px; right:10px;">
+<div id="selector" style="position:absolute;">
+</div>
+</div>
+{% endif %}
 </body>
 </html>

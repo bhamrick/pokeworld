@@ -16,4 +16,6 @@ class WebView:
         filename = os.path.join(PATH_PREFIX, 'resources/%s/maps/%s.json' % (game, map_id))
         with open(filename) as f:
             map_dict = json.loads(f.read())
+        map_dict['use_minimap'] = True
+        map_dict['minimap_img'] = ''
         return map_dict
