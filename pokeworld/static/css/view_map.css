@@ -43,14 +43,24 @@
 .object:hover .popup {
     display: block;
 }
+#map_img {
+    z-index: 0;
+}
 .highlight {
     background: rgba(0, 255, 0, 0.5);
     display: none;
+    z-index: 1;
+}
+.object {
+    z-index: 2;
+    background: none;
 }
 #minimap {
     border:1px solid white;
+    z-index: 3;
 }
 #minimap #selector {
     border:1px solid white;
     background:none;
+    z-index: 4;
 }
