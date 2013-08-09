@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/view_map.css">
 {% if use_minimap %}
 <script src="/static/js/jquery.js"></script>
-<script src="/static/js/minimap.js"></script>
+<script src="/static/js/view_map.js"></script>
 {% endif %}
 </head>
 <body>
@@ -16,9 +16,10 @@
 </div>
 </div>
 {% endfor %}
+<div class="highlight"></div>
 </div>
 {% if use_minimap %}
-<div id="minimap" style="background:url({{ minimap_img }}); width:200px; height:200px; position:fixed; bottom:10px; right:10px;">
+<div id="minimap" style="background:url({{ minimap_img }}); width:{{ minimap_w }}px; height:{{ minimap_h }}px; position:fixed; bottom:10px; right:10px;">
 <div id="selector" style="position:absolute;">
 </div>
 </div>
