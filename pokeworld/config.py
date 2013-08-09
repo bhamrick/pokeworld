@@ -11,5 +11,7 @@ def connect(config, path, view):
 def routes(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
 
+    config.add_route('root', '')
+    config.add_view(WebView.home, 'root')
     connect(config, '', WebView.home)
     connect(config, '/{game}/{mapid}', WebView.view_map)
