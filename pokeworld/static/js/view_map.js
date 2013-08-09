@@ -1,17 +1,35 @@
 function update_minimap() {
     var map_w = $("#map_img").width();
     var map_h = $("#map_img").height();
+    var border_width_w = ($("#map_img").outerWidth() - map_w) / 2;
+    var border_width_h = ($("#map_img").outerHeight() - map_h) / 2;
     var win_w = $(window).width();
     var win_h = $(window).height();
-    var scroll_x = $(document).scrollLeft();
-    var scroll_y = $(document).scrollTop();
+    var scroll_x = $(document).scrollLeft() - border_width_w;
+    var scroll_y = $(document).scrollTop() - border_width_h;
     var minimap_w = $("#minimap").width();
     var minimap_h = $("#minimap").height();
 
-    $("#selector").css({"left": minimap_w * scroll_x / map_w + "px",
-                        "top": minimap_h * scroll_y / map_h + "px",
-                        "width": minimap_w * win_w / map_w + "px",
-                        "height": minimap_h * win_h / map_h + "px"});
+    var sel_x = minimap_w * scroll_x / map_w;
+    var sel_y = minimap_h * scroll_y / map_h;
+    var sel_w = minimap_w * win_w / map_w;
+    var sel_h = minimap_h * win_h / map_h;
+    if (sel_x > minimap_w - sel_w) {
+        sel_x = minimap_w - sel_w;
+    }
+    if (sel_y > minimap_h - sel_h) {
+        sel_y = minimap_h - sel_h;
+    }
+    if (sel_x < 0) {
+        sel_x = 0;
+    }
+    if (sel_y < 0) {
+        sel_y = 0;
+    }
+    $("#selector").css({"left": sel_x + "px",
+                        "top": sel_y + "px",
+                        "width": sel_w + "px",
+                        "height": sel_h + "px"});
 }
 
 function update_scroll(x, y) {
@@ -45,8 +63,12 @@ function update_scroll(x, y) {
 
     $("#selector").css({"left": x + "px",
                         "right": y + "px"});
-    $(document).scrollTop(map_h * y / minimap_h);
-    $(document).scrollLeft(map_w * x / minimap_w);
+    var border_width_w = ($("#map_img").outerWidth() - map_w) / 2;
+    var border_width_h = ($("#map_img").outerHeight() - map_h) / 2;
+    var scroll_x = map_w * x / minimap_w + border_width_w;
+    var scroll_y = map_h * y / minimap_h + border_width_h;
+    $(document).scrollTop(scroll_y);
+    $(document).scrollLeft(scroll_x);
 }
 
 function minimap_click_handler(e) {

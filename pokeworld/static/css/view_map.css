@@ -45,6 +45,7 @@
 }
 #map_img {
     z-index: 0;
+    border:50px solid black;
 }
 .highlight {
     background: rgba(0, 255, 0, 0.5);
