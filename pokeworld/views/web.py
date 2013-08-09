@@ -1,9 +1,9 @@
-from APPNAME.lib.session import web, ajax
+from pokeworld.lib.session import web, ajax
 
 class WebView:
     @web(template="web/home.tmpl")
     def home(request):
-        return {'project' : 'APPNAME'}
+        return {'project' : 'pokeworld'}
 
     @ajax()
     def ajax_test(request):

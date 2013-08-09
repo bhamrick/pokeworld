@@ -3,7 +3,7 @@ import jinja2
 
 import simplejson as json
 
-env = jinja2.Environment(loader=jinja2.FileSystemLoader('APPNAME/templates'))
+env = jinja2.Environment(loader=jinja2.FileSystemLoader('pokeworld/templates'))
 
 def web(template=None, content_type='text/html', *args, **kwargs):
     """
