@@ -1,5 +1,5 @@
 Chameleon==2.9.2
-Jinja2==2.6
+jinja2==2.6
 Mako==0.7.2
 MarkupSafe==0.15
 MySQL-python==1.2.3
