@@ -37,10 +37,13 @@
     display:block;
     width:0;
 }
-.object .popup {
+.popup {
     display: none;
 }
 .object:hover .popup {
+    display: block;
+}
+a.warp:hover .popup {
     display: block;
 }
 #map_img {
@@ -67,4 +70,7 @@
     border:1px solid white;
     background:none;
     z-index: 4;
+}
+.block {
+    display: block;
 }

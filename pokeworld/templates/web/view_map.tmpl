@@ -22,7 +22,11 @@ use_minimap = false;
 </div>
 {% endfor %}
 {% for w in warps %}
-<a href="/{{ game }}/{{ w.to_map }}#{{ w.to_x }},{{ w.to_y }}" class="warp" style="display: block; position:absolute; left:{{ w.px_x }}px; top:{{ w.px_y }}px; width:16px; height:16px;"></a>
+<a href="/{{ game }}/{{ w.to_map }}#{{ w.to_x }},{{ w.to_y }}" class="warp" style="display: block; position:absolute; left:{{ w.px_x }}px; top:{{ w.px_y }}px; width:16px; height:16px;">
+<span class="popup triangle-border">
+{{ w.description }}
+</span>
+</a>
 {% endfor %}
 <div class="highlight"></div>
 </div>
