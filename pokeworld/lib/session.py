@@ -37,3 +37,19 @@ def ajax(*args, **kwargs):
                     )
         return staticmethod(wrapper)
     return decorator
+
+def data(content_type='application/octet-stream', *args, **kwargs):
+    """
+    Decorator for file routes
+
+    Returns a response with the contents of the specified content type
+    """
+    def decorator(f):
+        def wrapper(request):
+            retval = f(request)
+            return Response(
+                    body=retval,
+                    content_type=content_type
+                    )
+        return staticmethod(wrapper)
+    return decorator

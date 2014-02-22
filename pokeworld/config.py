@@ -8,3 +8,6 @@ def routes(config):
 
     config.add_route('view_map', '/{game}/{mapid}')
     config.add_view(WebView.view_map, route_name='view_map')
+
+    config.add_route('favicon', '/favicon.ico')
+    config.add_view(WebView.favicon, route_name='favicon')

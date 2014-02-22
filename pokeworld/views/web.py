@@ -1,4 +1,4 @@
-from pokeworld.lib.session import web, ajax
+from pokeworld.lib.session import web, ajax, data
 from pokeworld.constants import PATH_PREFIX
 
 import os.path
@@ -22,3 +22,8 @@ class WebView:
         map_dict['use_minimap'] = 'minimap_img' in map_dict
         map_dict['game'] = game
         return map_dict
+
+    @data(content_type='image/x-icon')
+    def favicon(request):
+        with open("pokeworld/static/favicon.ico") as f:
+            return f.read()
